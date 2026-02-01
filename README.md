@@ -17,7 +17,7 @@ Backend: Python, FastAPI, Uvicorn.
 
 Machine Learning: Scikit-Learn (StandardScaler), Joblib, NumPy (Vectorized Dot Product).
 
-📐 Machine Learning LogicThe core engine utilizes a Sigmoid activation function to transform linear input into a probability range $[0, 1]$:$$P(y=1|z) = \frac{1}{1 + e^{-z}}$$
+📐 Machine Learning LogicThe core engine utilizes a Sigmoid activation function to transform linear input into a probability range SIGMOID(z) = 1/(1+e^-z)
 
 The backend performs real-time feature scaling and injects a bias term (intercept) before calculating the dot product of the feature vector and model weights.
 
