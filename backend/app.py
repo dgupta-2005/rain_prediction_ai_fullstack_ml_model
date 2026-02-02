@@ -9,8 +9,8 @@ from starlette.middleware.cors import CORSMiddleware
 app= FastAPI()
 
 @app.get("/")
-def read_root():
-    return {"status": "ok"}
+def health_check():
+    return {"status": "ok", "message": "RainPredict AI is online"}
 
 # 1. Enable CORS for React (Port 5173)
 app.add_middleware(
