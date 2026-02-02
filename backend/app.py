@@ -13,12 +13,17 @@ def health_check():
     return {"status": "ok", "message": "RainPredict AI is online"}
 
 # 1. Enable CORS for React (Port 5173)
+origins = [
+    "http://localhost:5173",                            # Local development
+    "https://rain-predict-ui.onrender.com",             # Your LIVE frontend
+]
+
 app.add_middleware(
     CORSMiddleware,
-    # This regex allows any port from localhost to connect
-    allow_origin_regex="http://localhost:.*",
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=origins,                              # Use the list above
+    allow_credentials=True,
+    allow_methods=["*"],                                # Allows GET, POST, etc.
+    allow_headers=["*"],                                # Allows all headers
 )
 model_weights=joblib.load('model_weights.pkl')
 scaler= joblib.load("scaler.pkl")
