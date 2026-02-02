@@ -51,7 +51,7 @@ function App() {
       pressure: formData.pressure === "" ? 0 : parseFloat(formData.pressure)
     };
 
-    const response = await axios.post('http://127.0.0.1:8000/predict', dataToSend);
+    const response = await axios.post('https://rain-prediction-ai.onrender.com/predict', dataToSend);
     setResult(response.data);
   } catch (error) {
     console.error("Connection Error:", error);
