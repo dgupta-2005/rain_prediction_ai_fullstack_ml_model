@@ -15,7 +15,7 @@ def health_check():
 # 1. Enable CORS for React (Port 5173)
 origins = [
     "http://localhost:5173",                            # Local development
-    "https://rain-predict-ui.onrender.com",             # Your LIVE frontend
+    "https://rain-prediction-frontend.onrender.com",             # Your LIVE frontend
 ]
 
 app.add_middleware(
